@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_chestplate",
+      "nbt": "{Trim:{}}"
+    },
+    {
+      "item": "minecraft:glow_ink_sac"
+    }
+  ],
+  "result": {
+    "item": "wildwonders:glowing_diamond_chestplate",
+    "count": 1
+  }
+}

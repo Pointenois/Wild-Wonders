@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "wildwonders:item/glowing_diamond_chestplate"
+  }
+}
