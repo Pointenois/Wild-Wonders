@@ -1,8 +1,7 @@
 package net.veri.wildwonders.item;
 
+import net.minecraft.world.item.Rarity;
 import net.veri.wildwonders.WildWonders;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,10 +16,14 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_SAPPHIRE = ITEMS.register("raw_sapphire",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> GLOWING_DIAMOND_CHESTPLATE = ITEMS.register("glowing_diamond_chestplate",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<Item> GLOWING_NETHERITE_LEGGINGS = ITEMS.register("glowing_netherite_leggings",
-            () -> new ArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> BAT_WING = ITEMS.register("bat_wing",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GUARDIAN_COMPASS = ITEMS.register("guardian_compass",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .setNoRepair()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

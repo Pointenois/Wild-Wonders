@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wildwonders:item/guardian_compass"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ -90, 0, 0 ],
+      "translation": [ 0, 1, -3 ],
+      "scale": [ 0.55, 0.55, 0.55 ]
+    }
+  }
+}

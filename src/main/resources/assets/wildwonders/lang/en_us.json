@@ -1,8 +1,12 @@
 {
   "item.wildwonders.sapphire": "Sapphire",
   "item.wildwonders.raw_sapphire": "Raw Sapphire",
-  "item.wildwonders.glowing_netherite_leggings": "Glowing Netherite Leggings",
-  "item.wildwonders.glowing_diamond_chestplate": "Glowing Diamond Chestplate",
+  "item.wildwonders.bat_wing": "Bat Wing",
+  "item.minecraft.potion.effect.spelunker_potion": "Spelunker Potion",
+  "item.wildwonders.guardian_compass": "Guardian's Compass",
+  "advancements.wildwonders.guardian_engineer.title": "Iron Defense",
+  "advancements.wildwonders.guardian_engineer.description": "Assign a protection zone to an Iron Golem",
+  "subtitles.wildwonders.compass_update": "Compass chimes",
 
   "creativetab.wild_tab": "Wild Wonders"
 }

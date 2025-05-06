@@ -1,14 +1,16 @@
 package net.veri.wildwonders.item;
 
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.veri.wildwonders.WildWonders;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import net.veri.wildwonders.potion.ModPotions;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -20,9 +22,9 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.SAPPHIRE.get());
                         pOutput.accept(ModItems.RAW_SAPPHIRE.get());
-                        pOutput.accept(ModItems.GLOWING_DIAMOND_CHESTPLATE.get());
-                        pOutput.accept(ModItems.GLOWING_NETHERITE_LEGGINGS.get());
-
+                        pOutput.accept(ModItems.BAT_WING.get());
+                        pOutput.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.SPELUNKER_POTION.get()));
+                        pOutput.accept(ModItems.GUARDIAN_COMPASS.get());
 
                     })
                     .build());
