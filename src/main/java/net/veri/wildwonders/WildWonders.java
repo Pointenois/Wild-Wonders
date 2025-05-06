@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.Mob;
@@ -35,6 +36,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.veri.wildwonders.effect.ModEffects;
+import net.veri.wildwonders.entity.PetWanderHandler;
 import net.veri.wildwonders.entity.ai.ChaseBeyondHomeGoal;
 import net.veri.wildwonders.entity.ai.ReturnToHomeGoal;
 import net.veri.wildwonders.events.SpelunkerClientEvents;
@@ -89,6 +91,7 @@ public class WildWonders {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(SpelunkerClientEvents.class);
         MinecraftForge.EVENT_BUS.addListener(this::onEntityInteract);
+        MinecraftForge.EVENT_BUS.addListener(this::onPetInteract);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -165,6 +168,17 @@ public class WildWonders {
         if (event.getItemStack().getItem() == ModItems.GUARDIAN_COMPASS.get()) {
             event.getToolTip().add(Component.literal("§7Shift-right-click golems to update").withStyle(ChatFormatting.GRAY));
             event.getToolTip().add(Component.literal("§7their protection zone center").withStyle(ChatFormatting.GRAY));
+        }
+    }
+
+    @SubscribeEvent
+    public void onPetInteract(PlayerInteractEvent.EntityInteract event) {
+        if (event.getTarget() instanceof TamableAnimal pet) {
+            InteractionResult result = PetWanderHandler.handlePetInteraction(pet, event.getEntity(), event.getHand());
+            if (result.consumesAction()) {
+                event.setCanceled(true);
+                event.setCancellationResult(result);
+            }
         }
     }
 }

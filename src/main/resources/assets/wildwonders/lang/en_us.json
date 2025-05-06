@@ -4,8 +4,9 @@
   "item.wildwonders.bat_wing": "Bat Wing",
   "item.minecraft.potion.effect.spelunker_potion": "Spelunker Potion",
   "item.wildwonders.guardian_compass": "Guardian's Compass",
-  "advancements.wildwonders.guardian_engineer.title": "Iron Defense",
-  "advancements.wildwonders.guardian_engineer.description": "Assign a protection zone to an Iron Golem",
+  "msg.wildwonders.pet_mode.follow": "will now follow you",
+  "msg.wildwonders.pet_mode.stay": "will stay put",
+  "msg.wildwonders.pet_mode.wander": "will wander nearby",
   "subtitles.wildwonders.compass_update": "Compass chimes",
 
   "creativetab.wild_tab": "Wild Wonders"
